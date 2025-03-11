@@ -5,6 +5,13 @@ import string
 import hashlib
 import requests
 
+st.set_page_config(
+    page_title="Field-Based Password Strength Meter & Generator",
+    page_icon="🔒",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 password_rules = {
     "Financial Field": {
         "length": 12,
@@ -74,6 +81,71 @@ password_rules = {
         "digits": 3,
     },
 }
+
+st.markdown(
+    """
+    <style>
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 26px !important;
+            color: #2E86C1;
+        }
+        h2 {
+            font-size: 22px !important;
+            color: #2874A6;
+        }
+        h3 {
+            font-size: 20px !important;
+            color: #1B4F72;
+        }
+        .stSlider {
+            font-size: 14px !important;
+        }
+        .stButton button {
+            font-size: 15px !important;
+        }
+    }
+
+    .stProgress > div > div > div {
+        background: linear-gradient(90deg, #4CAF50, #2196F3) !important;
+        border-radius: 8px;
+    }
+
+    .stButton > button {
+        background-color: #2196F3;
+        color: white;
+        border-radius: 8px;
+        padding: 12px 22px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        transition: 0.3s;
+    }
+    .stButton > button:hover {
+        background-color: white;
+        colour: #2196F3
+        transform: scale(1.05);
+    }
+
+    .stSuccess {
+        color: #2ECC71;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .stWarning {
+        color: #F39C12;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .stError {
+        color: #E74C3C;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 SPECIAL_CHARACTERS = "!@#$%^&*"
 
