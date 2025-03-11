@@ -147,7 +147,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-SPECIAL_CHARACTERS = "!@#$%^&*"
+SPECIAL_CHARACTERS = r""" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 
 def password_strength(password):
     score = 0
